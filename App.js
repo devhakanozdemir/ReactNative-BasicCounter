@@ -1,31 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Pressable, TextInput, SafeAreaView } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { useState } from 'react';
 
-
 export default function App() {
 
-  const [value, setValue] = useState(0)
+  const [counter, setCounter] = useState(0)
   const [minimum, setMinimum] = useState(-100)
   const [maximum, setMaximum] = useState(100)
 
   const plus = () => {
-    setValue((value < maximum && value + 1))
+    setCounter((counter < maximum && counter + 1))
   }
 
   const minus = () => {
-    setValue(value > minimum && value - 1)
+    setCounter(counter > minimum && counter - 1)
   }
 
-
-
   const reset = () => {
-    setValue(0)
+    setCounter(0)
+    setMaximum(100)
+    setMinimum(-100)
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View>
         <View style={{ flexDirection: "row", paddingBottom: 20 }}>
           <Text style={{ color: "white", padding: 10, fontSize: 15 }}>Set minimum of counter </Text>
@@ -36,6 +35,7 @@ export default function App() {
             width={"20%"}
             height={35}
             onChangeText={setMinimum}
+
 
           />
         </View>
@@ -48,13 +48,12 @@ export default function App() {
             width={"20%"}
             height={35}
             onChangeText={setMaximum}
-
           />
         </View>
       </View>
 
       <View>
-        <Text style={{ fontSize: 150, color: 'white' }}>{value}</Text>
+        <Text style={{ fontSize: 150, color: 'white' }}>{counter}</Text>
       </View>
 
       <View>
@@ -67,19 +66,19 @@ export default function App() {
       <View style={styles.buttonsContainer}>
         <Pressable
           onPress={plus}
-          disabled={value == maximum}
+          disabled={counter == maximum}
         >
           <AntDesign name="pluscircleo" size={48} color="white" />
         </Pressable>
         <Pressable
           onPress={minus}
-          disabled={value == minimum}
+          disabled={counter == minimum}
         >
           <AntDesign name="minuscircleo" size={48} color="white" />
         </Pressable>
 
       </View>
-    </View >
+    </SafeAreaView>
   );
 }
 
