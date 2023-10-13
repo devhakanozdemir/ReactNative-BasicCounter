@@ -26,7 +26,8 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <View style={{ flexDirection: "row", paddingBottom: 20 }}>
+        <Text style={{ color: "white", textAlign: "center", fontSize: 40, fontWeight: "bold", top: -70 }}>BASIC COUNTER</Text>
+        <View style={{ flexDirection: "row", justifyContent: "center", marginBottom: 10 }}>
           <Text style={{ color: "white", padding: 10, fontSize: 15 }}>Set minimum of counter </Text>
           <TextInput
             placeholder='-100'
@@ -35,11 +36,9 @@ export default function App() {
             width={"20%"}
             height={35}
             onChangeText={setMinimum}
-
-
           />
         </View>
-        <View style={{ flexDirection: "row" }}>
+        <View style={{ flexDirection: "row", justifyContent: "center" }}>
           <Text style={{ color: "white", padding: 10, fontSize: 15 }}>Set maximum of counter</Text>
           <TextInput
             placeholder='100'
@@ -53,7 +52,7 @@ export default function App() {
       </View>
 
       <View>
-        <Text style={{ fontSize: 150, color: 'white' }}>{counter}</Text>
+        <Text style={{ fontSize: 150, color: 'white', marginBottom: 20, marginTop: 20, }}>{counter}</Text>
       </View>
 
       <View>
@@ -89,15 +88,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'black'
   },
-  textInputs: {
-    flexDirection: "row",
-    alignItems: 'center',
-    padding: 20,
-  },
   buttonsContainer: {
     flexDirection: 'row',
+    marginTop: 30,
     width: "70%",
     justifyContent: "space-between",
-
+    bottom: 20,
   }
 });
