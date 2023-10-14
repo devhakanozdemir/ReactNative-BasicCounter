@@ -36,6 +36,7 @@ export default function App() {
             width={"20%"}
             height={35}
             onChangeText={setMinimum}
+            value={minimum == -100 && ""}
           />
         </View>
         <View style={{ flexDirection: "row", justifyContent: "center" }}>
@@ -47,6 +48,7 @@ export default function App() {
             width={"20%"}
             height={35}
             onChangeText={setMaximum}
+            value={maximum == 100 && ""}
           />
         </View>
       </View>
