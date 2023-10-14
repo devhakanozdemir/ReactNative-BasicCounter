@@ -9,4 +9,4 @@ It's a single page - basic counter app.
 * When the counter reaches to limits, buttons will disable and counter will stop by using If / Else statements.
   <br><br>
 
-![preview](https://github.com/devhakanozdemir/ReactNative-BasicCounter/assets/88559189/7286d92e-0434-485a-a71a-08dcef504275)
+![ezgif com-video-to-gif](https://github.com/devhakanozdemir/ReactNative-BasicCounter/assets/88559189/59dcea27-dca5-4a6d-a637-a56e5db4fb3c)
